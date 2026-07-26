@@ -1,0 +1,19 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="icon" type="image/svg+xml" href="{{ "default-avatar.svg" | relURL }}">
+
+    <link rel="stylesheet" href="{{ "vendor/bootstrap.min.css" | relURL }}">
+    {{ $sassOptions := dict "transpiler" "dartsass" -}}
+    {{ $style := resources.Get "sass/researcher.scss" | resources.ExecuteAsTemplate "sass/researcher.scss" . | css.Sass $sassOptions | minify -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    {{ if .Params.noindex -}}
+    <meta name="robots" content="noindex">
+    {{ end -}}
+</head>
