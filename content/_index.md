@@ -2,7 +2,7 @@
 title = "Yiming Zuo"
 +++
 
-{{< figure class="avatar" src="/default-avatar.svg" alt="Default profile avatar" >}}
+{{< figure class="avatar" src="/avatar.png" alt="Yiming Zuo with his son" >}}
 
 I am a Ph.D. candidate in Artificial Intelligence at [Ocean University of China](https://www.ouc.edu.cn/).
 
